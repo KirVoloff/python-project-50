@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
 import argparse
+from gendiff.diff import generate_diff
+
 
 def main():
     parser = argparse.ArgumentParser(description='Compares two configuration files and shows a difference.')
@@ -9,7 +11,11 @@ def main():
     parser.add_argument('-f', '--format', metavar='FORMAT', type=str, default='stylish', help='Set format of output')
     args = parser.parse_args()
 
-    # Do something with first_file, second_file and format...
+    filepath1 = 'file1.json'
+    filepath2 = 'file2.json'
+    diff = generate_diff(filepath1, filepath2)
+    print(diff)
+
 
 if __name__ == '__main__':
     main()
