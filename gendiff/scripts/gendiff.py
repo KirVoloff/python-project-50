@@ -11,11 +11,8 @@ def main():
     parser.add_argument('-f', '--format', metavar='FORMAT', type=str, default='stylish', help='Set format of output')
     args = parser.parse_args()
 
-    filepath1 = 'file1.json'
-    filepath2 = 'file2.json'
-    diff = generate_diff(filepath1, filepath2)
+    diff = generate_diff('tests/fixtures/file1.json', 'tests/fixtures/file2.json')
     print(diff)
-
 
 if __name__ == '__main__':
     main()

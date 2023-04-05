@@ -1,48 +1,24 @@
 import json
 
 
-def generate_diff(filepath1, filepath2):
-    data1 = json.load(open(filepath1))
-    data2 = json.load(open(filepath2))
-    diff = find_diff(data1, data2)
-    return format_diff(diff)
+def generate_diff(file1_path, file2_path):
+    with open(file1_path, 'r') as file1, open(file2_path, 'r') as file2:
+        file1_data = json.load(file1)
+        file2_data = json.load(file2)
 
+    diff = {}
+    all_keys = set(file1_data.keys()) | set(file2_data.keys())
 
-def find_diff(data1, data2):
-    keys = sorted(set(list(data1.keys()) + list(data2.keys())))
-    diff = []
-    for key in keys:
-        value1 = data1.get(key)
-        value2 = data2.get(key)
-        if value1 == value2:
-            diff.append((' ', key, value1))
-        elif key not in data2:
-            diff.append(('-', key, value1))
-        elif key not in data1:
-            diff.append(('+', key, value2))
-        elif isinstance(value1, dict) and isinstance(value2, dict):
-            diff.append((' ', key, find_diff(value1, value2)))
+    for key in sorted(all_keys):
+        if key not in file1_data:
+            diff[f'+ {key}'] = file2_data[key]
+        elif key not in file2_data:
+            diff[f'- {key}'] = file1_data[key]
+        elif file1_data[key] != file2_data[key]:
+            diff[f'- {key}'] = file1_data[key]
+            diff[f'+ {key}'] = file2_data[key]
         else:
-            diff.append(('-', key, value1))
-            diff.append(('+', key, value2))
-    return diff
+            diff[f'  {key}'] = file1_data[key]
 
-
-def format_diff(diff, indent=2):
-    lines = ['{']
-    for sign, key, value in diff:
-        if isinstance(value, list) or isinstance(value, dict):
-            value = format_diff(value, indent + 2)
-        else:
-            value = json.dumps(value)
-        lines.append('{indent}"{key}": {sign} {value}'.format(
-            indent=' ' * indent, key=key, sign=sign, value=value))
-    lines.append('}')
-    return '\n'.join(lines)
-
-
-if __name__ == '__main__':
-    filepath1 = 'file1.json'
-    filepath2 = 'file2.json'
-    diff = generate_diff(filepath1, filepath2)
-    print(diff)
+    diff_lines = [f'{key}: {value}' for key, value in diff.items()]
+    return '\n'.join(diff_lines)
