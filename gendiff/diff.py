@@ -1,7 +1,7 @@
 import json
 
 
-def generate_diff(file1_path, file2_path):
+def gen_diff(file1_path, file2_path):
     with open(file1_path, 'r') as file1, open(file2_path, 'r') as file2:
         file1_data = json.load(file1)
         file2_data = json.load(file2)
