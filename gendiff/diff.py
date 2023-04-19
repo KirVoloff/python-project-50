@@ -11,14 +11,14 @@ def generate_diff(file1_path, file2_path):
 
     for key in sorted(all_keys):
         if key not in file1_data:
-            diff[f'+ {key}'] = file2_data[key]
+            diff["+ {0}".format(key)] = file2_data[key]
         elif key not in file2_data:
-            diff[f'- {key}'] = file1_data[key]
+            diff["- {0}".format(key)] = file1_data[key]
         elif file1_data[key] != file2_data[key]:
-            diff[f'- {key}'] = file1_data[key]
-            diff[f'+ {key}'] = file2_data[key]
+            diff["- {0}".format(key)] = file1_data[key]
+            diff["+ {0}".format(key)] = file2_data[key]
         else:
-            diff[f'  {key}'] = file1_data[key]
+            diff["  {0}".format(key)] = file1_data[key]
 
-    diff_lines = [f'{key}: {value}' for key, value in diff.items()]
+    diff_lines = ["{0}: {1}".format(key, value) for key, value in diff.items()]
     return '\n'.join(diff_lines)
