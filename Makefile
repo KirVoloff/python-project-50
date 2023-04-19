@@ -13,4 +13,7 @@ build:
 publish:
 		poetry publish --dry-run
 
+selfcheck:
+		poetry check
+
 check:		selfcheck test lint
