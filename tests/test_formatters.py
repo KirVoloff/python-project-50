@@ -1,14 +1,15 @@
 """Testing different formats"""
 import pytest
 from gendiff.format_maker import generate_diff
+from pathlib import Path
 
+stylish_flat_fixture = Path('tests/fixtures/stylish_fixture_flat.txt')
+stylish_nested_fixture = Path('tests/fixtures/stylish_nested_fixture.txt')
+plain_flat_fixture = Path('tests/fixtures/plain_fixture_flat.txt')
+plain_nested_fixture = Path('tests/fixtures/plain_fixture.txt')
+json_flat_fixture = Path('tests/fixtures/json_fixture.txt')
+json_nested_fixture = Path('tests/fixtures/json_nested_fixture.txt')
 
-stylish_flat_fixture = open('tests/fixtures/stylish_fixture_flat.txt')
-stylish_nested_fixture = open('tests/fixtures/stylish_nested_fixture.txt')
-plain_flat_fixture = open('tests/fixtures/plain_fixture_flat.txt')
-plain_nested_fixture = open('tests/fixtures/plain_fixture.txt')
-json_flat_fixture = open('tests/fixtures/json_fixture.txt')
-json_nested_fixture = open('tests/fixtures/json_nested_fixture.txt')
 
 
 file1_flat = 'tests/fixtures/file1.json'
@@ -23,13 +24,13 @@ nested_plain_result = generate_diff(file1_nested, file2_nested, 'plain')
 nested_json_result = generate_diff(file1_nested, file2_nested, 'json')
 
 
-@pytest.mark.parametrize("result,expected",
+@pytest.mark.parametrize("result, expected",
                          [(flat_stylish_result, stylish_flat_fixture),
                           (nested_stylish_result, stylish_nested_fixture),
                           (flat_plain_result, plain_flat_fixture),
                           (nested_plain_result, plain_nested_fixture),
                           (flat_json_result, json_flat_fixture),
-                          (nested_json_result, json_nested_fixture),
-                          ])
+                          (nested_json_result, json_nested_fixture)])
 def test_formatters(result, expected):
-    assert result == expected.read()
+    expected_content = expected.read_text().strip()
+    assert result.strip() == expected_content
