@@ -32,8 +32,7 @@ def get_stylish(tree: dict) -> str:
     return build_stylish(tree)
 
 
-def build_stylish(node, depth=0) -> str:
-    # noqa: C901
+def build_stylish(node, depth=0) -> str:  # noqa: C901
     """
     starts comparing children inside the root nodes
     :return: string of comparisons

@@ -1,5 +1,4 @@
-def build_plain(node, ancestry='') -> str:
-    # noqa: C901
+def build_plain(node, ancestry='') -> str:  # noqa: C901
     """
     starts comparing children inside the root nodes
     :return: string of comparisons
