@@ -12,9 +12,7 @@ This is a utility that compares two json/yml files and shows the result in three
 
 ### Clone the repository using this command:
 
-<div class="highlight-box">
-  <p>git clone [https://github.com/KirVoloff/python-project-50.git]</p>
-</div>
+git clone [https://github.com/KirVoloff/python-project-50.git]</p>
 
 ### Requirements:
 
@@ -65,11 +63,3 @@ Example of work with json formatting(flat):
 Example of work with json formatting(nested):
 [![asciicast](https://asciinema.org/a/LH51jN6qjlvM9aqn6VUxkoF4J.svg)](https://asciinema.org/a/LH51jN6qjlvM9aqn6VUxkoF4J)
 
-
-<style>
-  .highlight-box {
-    background-color: #f2f2f2;
-    border: 1px solid #e0e0e0;
-    padding: 10px;
-  }
-</style>
