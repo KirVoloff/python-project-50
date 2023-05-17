@@ -44,3 +44,21 @@ After successful installation, you need to initiate new poetry package using thi
 
 
 # Videos with examples of utility work
+
+Example of work with flat types(json):
+[![asciicast](https://asciinema.org/a/Ha3Zfzsrhax8Ztav3cyGHNlIU.svg)](https://asciinema.org/a/Ha3Zfzsrhax8Ztav3cyGHNlIU)
+
+Example of work with flat types(yaml):
+[![asciicast](https://asciinema.org/a/5os906oSKLRtTZfng79EwJnn9.svg)](https://asciinema.org/a/5os906oSKLRtTZfng79EwJnn9)
+
+Example of work with nested types(json and yaml) - stylish:
+
+
+Example of work with nested types(json and yaml) - plain:
+[![asciicast](https://asciinema.org/a/VKbOQNQ8jDimUOyAGDlBVFJvZ.svg)](https://asciinema.org/a/VKbOQNQ8jDimUOyAGDlBVFJvZ)
+
+Example of work with json formatting(flat):
+
+
+Example of work with json formatting(nested):
+[![asciicast](https://asciinema.org/a/LH51jN6qjlvM9aqn6VUxkoF4J.svg)](https://asciinema.org/a/LH51jN6qjlvM9aqn6VUxkoF4J)
