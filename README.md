@@ -25,7 +25,7 @@ In order to use commands from Makefile, you need to have poetry installed
 
 Firstly, check your current pip version and upgrade it, if needed:
 
-**python -m pip --version**
+*python -m pip --version*
 
 **python -m pip install --upgrade pip**
 
