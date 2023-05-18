@@ -6,6 +6,7 @@
 
 # Getting started
 
+
 ### Description:
 
 This is a utility that compares two json/yml files and shows the result in three different formats: stylish, plain or json
