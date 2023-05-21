@@ -27,7 +27,7 @@ In order to use commands from Makefile, you need to have poetry installed
 
 Firstly, check your current pip version and upgrade it, if needed:
 
-*python -m pip --version*
+**python -m pip --version**
 
 **python -m pip install --upgrade pip**
 
@@ -36,13 +36,13 @@ After successful installation, you need to initiate new poetry package using thi
 **poetry init**
 
 ## Makefile commands:
-**make install** install poetry packages
+**make install** *install poetry packages*
 
-**make build** build poetry package and create dist directories
+**make build** *build poetry package and create dist directories*
 
-**make package-install** install built package to start using simple shell commands
+**make package-install** *install built package to start using simple shell commands*
 
-**make publish** publish the project to PyPI after making a build
+**make publish** *publish the project to PyPI after making a build*
 
 
 # Videos with examples of utility work
