@@ -11,7 +11,6 @@ json_flat_fixture = Path('tests/fixtures/json_fixture.txt')
 json_nested_fixture = Path('tests/fixtures/json_nested_fixture.txt')
 
 
-
 file1_flat = 'tests/fixtures/file1.json'
 file2_flat = 'tests/fixtures/file2.json'
 file1_nested = 'tests/fixtures/file1_nested.json'
