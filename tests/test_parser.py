@@ -1,9 +1,9 @@
-from gendiff.parser import parse
+from gendiff.parser import parse_file
 
 
 def test_parse_module():
-    json_file = parse(open('tests/fixtures/file1.json'), 'json')
-    yml_file = parse(open('tests/fixtures/file2.yml'), 'yml')
+    json_file = parse_file(open('tests/fixtures/file1.json'), 'json')
+    yml_file = parse_file(open('tests/fixtures/file2.yml'), 'yml')
     data_type = type(json_file)
     assert data_type == dict
     assert json_file == {'host': 'hexlet.io', 'timeout': 50,

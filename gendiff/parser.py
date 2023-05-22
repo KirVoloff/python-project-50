@@ -2,7 +2,7 @@ import json
 import yaml
 
 
-def parse(file, extension):
+def parse_file(file, extension):
     '''
     Parses data from path in command line and transforms it
     into Python dictionary

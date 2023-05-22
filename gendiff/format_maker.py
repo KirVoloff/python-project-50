@@ -2,7 +2,7 @@ from gendiff.formats.stylish import get_stylish
 from gendiff.formats.plain import get_plain
 from gendiff.formats.json import get_json
 from gendiff.modules.tree import make_tree
-from gendiff.parser import parse
+from gendiff.parser import parse_file
 
 
 def open_file(path):
@@ -10,7 +10,7 @@ def open_file(path):
     Gets data from the parse function and opens relevant file
     in the working directory.
     '''
-    return parse(open(path), path.split('.')[-1])
+    return parse_file(open(path), path.split('.')[-1])
 
 
 def generate_diff(file_1, file_2, format_name='stylish'):
